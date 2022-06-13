@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Badge, Col, ListGroup, Row } from "react-bootstrap";
+import { Badge, Card, Col, ListGroup, Row } from "react-bootstrap";
 import { numberWithCommas } from "../utils/utils";
 import ModalKeranjang from "./ModalKeranjang";
 import TotalBayar from "./TotalBayar";
@@ -111,12 +111,13 @@ export default class Hasil extends Component {
   render() {
     const { keranjangs } = this.props;
     return (
-      <Col md={3} mt="2">
+      <Col md={3} className="mt-3">
         <h4>
           <strong>Hasil</strong>
         </h4>
         <hr />
         {keranjangs.length !== 0 && (
+          <Card className="overflow-auto hasil">
           <ListGroup variant="flush">
             {keranjangs.map((menuKeranjang) => (
               <ListGroup.Item
@@ -154,6 +155,7 @@ export default class Hasil extends Component {
               hapusPesanan={this.hapusPesanan}
             />
           </ListGroup>
+        </Card>
         )}
 
         <TotalBayar keranjangs={keranjangs} {...this.props} />
