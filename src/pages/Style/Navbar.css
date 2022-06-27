@@ -1,0 +1,12 @@
+.SignOut{
+	color: #ffff;
+	border: 5px;
+	border-radius: 10px;
+	text-decoration: none;
+	border: 2px solid;
+	padding: 5px 10px;
+	
+}
+.SignOut:hover{
+	color: #ffff;
+}
