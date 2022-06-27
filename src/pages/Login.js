@@ -13,6 +13,7 @@ import {
 
 // Style
 import "./Style/Login.css";
+import "./Style/Error.css";
 
 // Assets
 import GoogleLogo from "../Assets/Google Logo.png";
@@ -20,6 +21,7 @@ import GoogleLogo from "../Assets/Google Logo.png";
 const Login = () => {
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
+  const [error, setError] = useState("");
   const [user, setUser] = useState({});
   const provider = new GoogleAuthProvider();
 
@@ -34,18 +36,20 @@ const Login = () => {
   });
 
   // Login Function
-  const loginProcess = () => {
-    try {
+  const loginProcess = (e) => {
+    e.preventDefault();
       const user = signInWithEmailAndPassword(
         firebaseauth,
         loginEmail,
         loginPassword
-      );
-      console.log(user);
-      navigate("/home", { from });
-    } catch (error) {
-      console.log(error.message);
-    }
+      ).then((user)=>{
+        navigate("/home", { from });
+      }).catch((error)=>{
+        console.log(error.code);
+       setError(error.code.split ("/")[1]);
+
+      })
+    
   };
 
   const logout = async () => {
@@ -64,6 +68,7 @@ const Login = () => {
 
   return (
     <div className="login-container">
+      
       <div>
         <button className="buttonsignout" onClick={logout}>
           Sign Out
@@ -71,6 +76,7 @@ const Login = () => {
         <p>Sign In as </p>
         {user != null ? user.email : "Sign in First"}
         <br />
+        {error === "" ? "" : <p className="error">{error}</p>}
         <div className="box-login-container">
           <h1>Login</h1>
           <form>
