@@ -1,0 +1,82 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+
+.logo-login-container {
+    display: flex;
+    justify-content: center;
+}
+
+.box-login-container {
+    padding: 30px 30px;
+    box-shadow: 2px 28px 79px -70px rgba(229, 229, 229, 0.75);
+}
+
+.form-group {
+    margin: 20px 0;
+}
+
+#email-form,
+#password-form {
+    background: rgb(255, 255, 255);
+    width: 400px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    color: black;
+    margin-top: 5px;
+}
+
+.button-login {
+    width: 400px;
+    height: 40px;
+    background-color:gold; 
+    border-radius: 10px;
+    border: none;
+    margin-top: 20px;
+
+}
+
+.small-text {
+    font-size: 12px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+hr {
+    margin: 20px 0;
+}
+
+.center-text {
+    text-align: center;
+    margin: 5px 0;
+}
+
+.google-logo {
+    width: 20px;
+    height: 20px;
+    margin: 0 10px;
+}
+
+.google-button-login {
+    width: 400px;
+    height: 40px;
+    border: none;
+    border: 1px solid white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.google-button-login:hover {
+    border: 1px solid #de603d;
+}
+.buttonsignout{
+    border: 1px;
+    
+    background-color: aliceblue;
+}
